@@ -2,113 +2,123 @@ const ApplicationForm = {
     template: `
         <form @submit="handleSubmit" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
         <fieldset>
-        <legend>Personal Information</legend>
-        <div>
+      <legend class="mb-3 ">Personal Information</legend>
+      <div class="row mb-3">
+        <div class="col-md-6">
           <label for="firstName">First Name:</label>
-          <input type="text" id="firstName" name="firstName" v-model="form.firstName"  />
-          <span v-if="errors.firstName" class="error">{{ errors.firstName }}</span>
+          <input type="text" id="firstName" name="firstName" v-model="form.firstName" class="form-control" />
+          <span v-if="errors.firstName" class="error text-danger">{{ errors.firstName }}</span>
         </div>
 
-        <!-- Last Name -->
-        <div>
+        <div class="col-md-6">
           <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" name="lastName" v-model="form.lastName"  />
-          <span v-if="errors.lastName" class="error">{{ errors.lastName }}</span>
+          <input type="text" id="lastName" name="lastName" v-model="form.lastName" class="form-control" />
+          <span v-if="errors.lastName" class="error text-danger">{{ errors.lastName }}</span>
         </div>
-      </fieldset>
+      </div>
+    </fieldset>
 
-      <!-- Username -->
-      <div>
+    <!-- Username -->
+    <div class="row mb-3">
+      <div class="col-md-6">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" v-model="form.username"  />
-        <span v-if="errors.username" class="error">{{ errors.username }}</span>
+        <input type="text" id="username" name="username" v-model="form.username" class="form-control" />
+        <span v-if="errors.username" class="error text-danger">{{ errors.username }}</span>
       </div>
 
       <!-- Password -->
-      <div>
+      <div class="col-md-6">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password"  v-model="form.password"  />
-        <span v-if="errors.password" class="error">{{ errors.password }}</span>
+        <input type="password" id="password" name="password" v-model="form.password" class="form-control" />
+        <span v-if="errors.password" class="error text-danger">{{ errors.password }}</span>
       </div>
+    </div>
 
-      <!-- Confirm Password -->
-      <div>
+    <!-- Confirm Password -->
+    <div class="row mb-3">
+      <div class="col-md-6">
         <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" v-model="form.confirmPassword"  />
-        <span v-if="errors.confirmPassword" class="error">{{ errors.confirmPassword }}</span>
+        <input type="password" id="confirmPassword" name="confirmPassword" v-model="form.confirmPassword" class="form-control" />
+        <span v-if="errors.confirmPassword" class="error text-danger">{{ errors.confirmPassword }}</span>
       </div>
 
       <!-- Email -->
-      <div>
+      <div class="col-md-6">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email"  v-model="form.email"  />
-        <span v-if="errors.email" class="error">{{ errors.email }}</span>
+        <input type="email" id="email" name="email" v-model="form.email" class="form-control" />
+        <span v-if="errors.email" class="error text-danger">{{ errors.email }}</span>
       </div>
+    </div>
 
-      <!-- Street Address -->
-      <div>
+    <!-- Street Address -->
+    <div class="row mb-3">
+      <div class="col-md-6">
         <label for="streetAddress">Street Address:</label>
-        <input type="text" id="streetAddress" name="streetAddress" v-model="form.streetAddress" />
-         <span v-if="errors.streetAddress" class="error">{{ errors.streetAddress }}</span>
-
+        <input type="text" id="streetAddress" name="streetAddress" v-model="form.streetAddress" class="form-control" />
+        <span v-if="errors.streetAddress" class="error text-danger">{{ errors.streetAddress }}</span>
       </div>
 
       <!-- Suburb -->
-      <div>
+      <div class="col-md-6">
         <label for="suburb">Suburb:</label>
-        <input type="text" id="suburb" name="suburb" v-model="form.suburb" />
-         <span v-if="errors.suburb" class="error">{{ errors.suburb }}</span>
-
+        <input type="text" id="suburb" name="suburb" v-model="form.suburb" class="form-control" />
+        <span v-if="errors.suburb" class="error text-danger">{{ errors.suburb }}</span>
       </div>
+    </div>
 
-      <!-- Postcode -->
-      <div>
+    <!-- Postcode -->
+    <div class="row mb-3">
+      <div class="col-md-6">
         <label for="postcode">Postcode:</label>
-        <input type="text" id="postcode" name="postcode" v-model="form.postcode"  />
-        <span v-if="errors.postcode" class="error">{{ errors.postcode }}</span>
+        <input type="text" id="postcode" name="postcode" v-model="form.postcode" class="form-control" />
+        <span v-if="errors.postcode" class="error text-danger">{{ errors.postcode }}</span>
       </div>
 
       <!-- Mobile Number -->
-      <div>
+      <div class="col-md-6">
         <label for="mobileNumber">Mobile Number:</label>
-        <input type="text" id="mobileNumber" name="mobileNumber" v-model="form.mobileNumber"  />
-        <span v-if="errors.mobileNumber" class="error">{{ errors.mobileNumber }}</span>
+        <input type="text" id="mobileNumber" name="mobileNumber" v-model="form.mobileNumber" class="form-control" />
+        <span v-if="errors.mobileNumber" class="error text-danger">{{ errors.mobileNumber }}</span>
       </div>
+    </div>
 
-      <!-- Date of Birth -->
-      <div>
+    <!-- Date of Birth -->
+    <div class="row mb-3">
+      <div class="col-md-6">
         <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" v-model="form.dob"  />
-        <span v-if="errors.dob" class="error">{{ errors.dob }}</span>
+        <input type="date" id="dob" name="dob" v-model="form.dob" class="form-control" />
+        <span v-if="errors.dob" class="error text-danger">{{ errors.dob }}</span>
       </div>
 
       <!-- Preferred Job Category -->
-      <div>
+      <div class="col-md-6">
         <label for="preferredJobCategory">Preferred Job Category:</label>
-        <select id="preferredJobCategory" name="preferredJobCategory"  v-model="form.preferredJobCategory" >
+        <select id="preferredJobCategory" name="preferredJobCategory" v-model="form.preferredJobCategory" class="form-control">
           <option value="">Select Category</option>
           <option value="AI">AI</option>
           <option value="Data Science">Data Science</option>
           <option value="Web Development">Web Development</option>
         </select>
-        <span v-if="errors.preferredJobCategory" class="error">{{ errors.preferredJobCategory }}</span>
+        <span v-if="errors.preferredJobCategory" class="error text-danger">{{ errors.preferredJobCategory }}</span>
       </div>
+    </div>
 
-      <!-- Terms and Conditions -->
-      <div>
-        <input type="checkbox" id="terms" v-model="form.terms"  />
-        <label for="terms">I agree to the terms and conditions</label>
-        <button type="button" @click="toggleTermsVisibility">View Terms</button>
-        <p v-if="showTerms">By submitting this application, you agree to abide by the rules and regulations of the application process.
-            Please ensure that all the information provided is accurate and true to the best of your knowledge.
-            Any false or misleading information may lead to disqualification from the application process.</p>
-        <span v-if="errors.terms" class="error">{{ errors.terms }}</span>
-      </div>
+    <!-- Terms and Conditions -->
+    <div class="mb-3">
+      <input type="checkbox" id="terms" v-model="form.terms" />
+      <label for="terms">.  I agree to the terms and conditions</label>
+      <button type="button" @click="toggleTermsVisibility" class="btn btn-link">View Terms</button>
+      <p v-if="showTerms">By submitting this application, you agree to abide by the rules and regulations of the application process.
+        Please ensure that all the information provided is accurate and true to the best of your knowledge.
+        Any false or misleading information may lead to disqualification from the application process.</p>
+      <span v-if="errors.terms" class="error text-danger">{{ errors.terms }}</span>
+    </div>
 
-      <!-- Submit Button -->
-      <div>
-        <button type="submit">Submit</button>
-      </div>
+    <!-- Submit Button -->
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
         </form>
 
 
